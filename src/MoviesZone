@@ -1,0 +1,25 @@
+import React from 'react';
+//// pahele Mo
+const Movie = ({ movies }) => {
+  return (
+    <div className="flex flex-wrap justify-center gap-6 transition-all duration-500">
+      {movies.map((item) => (
+        <div
+          key={item.id}
+          className="w-full max-w-[220px] text-center group"
+        >
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src={item.poster_path}
+              alt={item.title}
+              className="w-full h-auto border-2 border-yellow-400 rounded-lg transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+            />
+          </div>
+          <h1 className="mt-3 text-lg font-semibold text-white truncate">{item.title}</h1>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Movie;
